@@ -85,10 +85,10 @@ export default function ProList() {
       {proxies.map((pro, index) => (
         <div
           key={index}
-          className="flex items-center justify-between rounded-2xl border border-zinc-800 bg-zinc-950 p-4"
+          className="flex items-center justify-between gap-16 rounded-2xl border border-zinc-800 bg-zinc-950 p-4"
         >
-          <div>
-            <div className="text-sm text-zinc-200 truncate w-xl overflow-hidden">{pro.url}</div>
+          <div className="flex min-w-0 flex-1 flex-col">
+            <div className="truncate text-sm text-zinc-200">{pro.url}</div>
 
             <div className={`mt-1 text-sm font-bold ${getPingColor(pro.ping)}`}>
               {pro.ping ? `${pro.ping}ms` : 'Unavailable'}
