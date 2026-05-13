@@ -82,21 +82,21 @@ export default function ProList() {
         </button>
       </div>
 
-      {proxies.map((proxy) => (
+      {proxies.map((pro, index) => (
         <div
-          key={proxy.url}
+          key={index}
           className="flex items-center justify-between rounded-2xl border border-zinc-800 bg-zinc-950 p-4"
         >
           <div>
-            <code className="text-sm text-zinc-200">{proxy.url}</code>
+            <div className="text-sm text-zinc-200 truncate w-xl overflow-hidden">{pro.url}</div>
 
-            <div className={`mt-1 text-sm font-bold ${getPingColor(proxy.ping)}`}>
-              {proxy.ping ? `${proxy.ping}ms` : 'Unavailable'}
+            <div className={`mt-1 text-sm font-bold ${getPingColor(pro.ping)}`}>
+              {pro.ping ? `${pro.ping}ms` : 'Unavailable'}
             </div>
           </div>
 
           <button
-            onClick={() => handleCopy(proxy.url)}
+            onClick={() => handleCopy(pro.url)}
             className="rounded-lg bg-zinc-800 px-4 py-2 text-white hover:bg-zinc-700"
           >
             Copy
